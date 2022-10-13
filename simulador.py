@@ -104,9 +104,10 @@ def tabla():
 	tabla_print = []
 	print("El campeon es:", S[0])
 	for E in S:
-		tabla_print.append("|")
+		
 		tabla_print.append(E.nombre)
-		tabla_print.append("|")
 		tabla_print.append(E.puntos,)
-	return tabla_print
+	print(tabla_print)
+	return(tabla_print)
+tabla()
    
