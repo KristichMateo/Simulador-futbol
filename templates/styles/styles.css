@@ -1,3 +1,25 @@
 #padre{
   text-align: center;
+  background-color:#001d3d;
+  height: 100%;
+}
+img{
+  width:300px;
+  height: 200px;
+}
+#titulo{
+  text-align: center;
+}
+#padre_total{
+  background-color: #0d1b2a;
+  height: 900px;
+  
+}
+*{
+  color: white;
+}
+@media (max-width: 1200px) {
+  #padre_total{
+    height: 1200px;
+  }
 }

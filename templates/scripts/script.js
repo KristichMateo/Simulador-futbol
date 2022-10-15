@@ -2,11 +2,12 @@
 let API = "http://localhost:5000";
 let fila_datos = document.getElementById("fila_inicial");
 let boton = document.getElementById("boton");
+let borrar = document.getElementById("borrar");
 
 
 boton.addEventListener("click",async function devolver_tabla() {
   
-
+  
   
   const respuesta = await fetch(`${API}/devolver`,{
       method:["GET"],
@@ -15,7 +16,7 @@ boton.addEventListener("click",async function devolver_tabla() {
   console.log(data);
   data.nombre.reverse();
   data.puntos.reverse();
-  
+
   for (let i = 0; i < 26; i++) {
     let celda = document.createElement("tr");
     let equipo_td = document.createElement("td");
@@ -33,6 +34,8 @@ boton.addEventListener("click",async function devolver_tabla() {
 
 
   })
-
-
+borrar.addEventListener("click",borrar_fun)
+function borrar_fun() {
+  window.location.reload()
+}
 
