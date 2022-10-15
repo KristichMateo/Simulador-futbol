@@ -15,28 +15,29 @@ from datetime import datetime
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import *
 from flask_cors import CORS
-from simulador import tabla
+from simulador import torneo
 app = Flask(__name__)      
 CORS(app)
-tabla_var = tabla()
-longitud = len(tabla_var)
-key_list = ["nombre","puntos"]
-equipos = []
-puntos = []
-for x in range(longitud):
-  if x % 2 == 0:
-      equipos.append(tabla_var[x])  
-  else:
-      puntos.append(tabla_var[x])
-value_list = []
-value_list.append(equipos) 
-value_list.append(puntos)
-tabla_front = dict(zip(key_list, value_list))
-print("fsdfas")
-print(value_list)
-print(tabla_front)
+
+
 @app.route("/devolver") 
 def devolver_tabla():
+    print("se ejecuta?")
+    torneo()
+    tabla_var = torneo()
+    longitud = len(tabla_var)
+    key_list = ["nombre","puntos"]
+    equipos = []
+    puntos = []
+    for x in range(longitud):
+        if x % 2 == 0:
+            equipos.append(tabla_var[x])  
+        else:
+            puntos.append(tabla_var[x])
+    value_list = []
+    value_list.append(equipos) 
+    value_list.append(puntos)
+    tabla_front = dict(zip(key_list, value_list))
     return (tabla_front)
 
 if __name__ == '__main__':

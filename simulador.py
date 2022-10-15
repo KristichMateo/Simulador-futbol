@@ -44,70 +44,77 @@ Arsenal = Equipo(61,"Arsenal de Sarandi",14,4)
 E= [Tomba,Boca,Talleres,River,Estudiantes,Lanus,Independiente,Velez,Colon,Racing,Gimnasia,Rosario_Central,
 Defensa,Argentinos,Newells,Atletico,Patronato,Huracan,San_Lorenzo,Sarmiento,Aldosivi,Platense,Union,Central_Cordoba,
 Banfield,Arsenal]
-Puntos = []
-GF = []
-GC = []
-DG = []
-for j in range (26):
-	Puntos += [0]
-	GF += [0]
-	GC += [0]
-	DG += [0]
+def simular():
+	Puntos = []
+	GF = []
+	GC = []
+	DG = []
 
-def gol_local (pdg,pdd,pdc):
-	global golL
-	golL = 0
-	for k in range (pdc):
-		p=random.randint(0,100)
-		b=random.randint(0,25)
-		if p < pdg and b < pdd:
-			golL = golL+1
-		if k == 4:
-			return golL
-	return golL
-def gol_visita (pdg,pdd,pdc):
-	global golV
-	golV = 0
-	for k in range (pdc):
-		p=random.randint(0,100)
-		b=random.randint(0,25)
-		if p < pdg and b < pdd:
-			golV = golV+1
-		if k == 4:
-			return golV
-	return golV
-for i in range (26):
-	print(E[i].nombre,"en casa:")
-	for c in range (26):
-		l = 0
-		v = 0
-		if E[c].nombre != E[i].nombre:
-			l = gol_local(E[i].pdg,E[c].pdd,E[i].pdc)
-			v = gol_visita(E[c].pdg,E[i].pdd,E[c].pdc)
-			print(E[i].nombre,l,":",v, E[c].nombre)
-			if v < l:
-				Puntos[i] = Puntos[i]+3
-			elif v == l:
-				Puntos[i] = Puntos[i]+1
-				Puntos[c] = Puntos[c]+1
-			elif v > l:
-				Puntos[c] = Puntos[c]+3
-	
-Q = []
-for i in range(26):
-	E[i].puntos = Puntos[i]
-	Q.append(Puntos[i])
-	
-S = sorted(E, key=lambda t: t.puntos, reverse=True)
+	for j in range (26):
+		Puntos += [0]
+		GF += [0]
+		GC += [0]
+		DG += [0]
 
+	def gol_local (pdg,pdd,pdc):
+		global golL
+		golL = 0
+		for k in range (pdc):
+			p=random.randint(0,100)
+			b=random.randint(0,25)
+			if p < pdg and b < pdd:
+				golL = golL+1
+			if k == 4:
+				return golL
+		return golL
+	def gol_visita (pdg,pdd,pdc):
+		global golV
+		golV = 0
+		for k in range (pdc):
+			p=random.randint(0,100)
+			b=random.randint(0,25)
+			if p < pdg and b < pdd:
+				golV = golV+1
+			if k == 4:
+				return golV
+		return golV
+	for i in range (26):
+		print(E[i].nombre,"en casa:")
+		for c in range (26):
+			l = 0
+			v = 0
+			if E[c].nombre != E[i].nombre:
+				l = gol_local(E[i].pdg,E[c].pdd,E[i].pdc)
+				v = gol_visita(E[c].pdg,E[i].pdd,E[c].pdc)
+				print(E[i].nombre,l,":",v, E[c].nombre)
+				if v < l:
+					Puntos[i] = Puntos[i]+3
+				elif v == l:
+					Puntos[i] = Puntos[i]+1
+					Puntos[c] = Puntos[c]+1
+				elif v > l:
+					Puntos[c] = Puntos[c]+3
+		
+	Q = []
+	for i in range(26):
+		E[i].puntos = Puntos[i]
+		Q.append(Puntos[i])
+		
+	S = sorted(E, key=lambda t: t.puntos, reverse=True)
+	return S
 def tabla():
 	tabla_print = []
-	print("El campeon es:", S[0])
-	for E in S:
+	print("El campeon es:", simular()[0])
+	
+	for E in simular():
 		
 		tabla_print.append(E.nombre)
-		tabla_print.append(E.puntos,)
+		tabla_print.append(E.puntos)
 	print(tabla_print)
 	return(tabla_print)
-tabla()
    
+def torneo():
+	simular()
+	tabla()
+	return tabla()
+torneo()
