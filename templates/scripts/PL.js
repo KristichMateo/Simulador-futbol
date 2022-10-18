@@ -9,7 +9,7 @@ boton.addEventListener("click",async function devolver_tabla() {
   
   
   
-  const respuesta = await fetch(`${API}/devolver`,{
+  const respuesta = await fetch(`${API}/premier`,{
       method:["GET"],
     },)
   let data = await respuesta.json();
@@ -17,7 +17,7 @@ boton.addEventListener("click",async function devolver_tabla() {
   data.nombre.reverse();
   data.puntos.reverse();
 
-  for (let i = 0; i < 26; i++) {
+  for (let i = 0; i < 20; i++) {
     let celda = document.createElement("tr");
     let equipo_td = document.createElement("td");
     let puntos_td = document.createElement("td");
@@ -32,16 +32,16 @@ boton.addEventListener("click",async function devolver_tabla() {
     puntos_td.appendChild(nodo_puntos);
     console.log(data.nombre[i]);
     console.log(data.puntos[i])
-    if (i==25){
+    if (i==19){
       celda.setAttribute("id","campeon")
     }
-    else if (i==24||i==23||i==22||i==21||i==20){
+    else if (i==19||i==18||i==17||i==16){
       celda.setAttribute("class","libertadores")
     }
-    else if (i==19||i==18||i==17||i==16||i==15||i==14){
+    else if (i==15){
       celda.setAttribute("class","sudamericana")
     }
-    else if (i==1||i==0){
+    else if (i==1||i==0||i==2){
       celda.setAttribute("class","descensos")
     }
     else{
