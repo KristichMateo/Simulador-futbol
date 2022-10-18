@@ -1,11 +1,17 @@
+*{
+  color: white;
+}
 #padre{
   text-align: center;
-  background-color:#001d3d;
+  background-color:#011638;
   height: 100%;
 }
-img{
+.img-main{
   width:300px;
   height: 200px;
+}
+#afa{
+  height: 250px;
 }
 #titulo{
   text-align: center;
@@ -15,11 +21,111 @@ img{
   height: 900px;
   
 }
-*{
+#div_footer>div{
+  padding:40px;
+}
+
+#footer{
+  background-color:#191919;
+  height:100%
+}
+
+
+#tablas_competiciones{
+  position: relative;
+  top: 80%;
+}
+
+/* colorear tablas */
+#campeon{
+  background-color: gold;
+  color: black;
+}
+#tabla{
+  color: black;
+}
+.equipo{
+  color: black;
+}
+.libertadores{
+  background-color: green;
+}
+.sudamericana{
+  background-color: yellowgreen;
+}
+.descensos{
+  background-color: red;
+}
+.nada{
+  background-color: grey ;
+}
+/* colorear tablas */
+/* explicador */
+#campeon_color{
+  background-color: gold;
+  height: 40px;
+  width: 230px;
+}
+#copas>h6{
   color: white;
 }
+.Libertadores_color{
+  background-color: green;
+  height: 40px;
+  width: 230px;
+}
+.Sudamericana_color{
+  background-color: yellowgreen;
+  height: 40px;
+  width: 230px;
+}
+.Nada_color{
+  background-color: grey;
+  height: 40px;
+  width: 230px;
+}
+.descensos_color{
+  background-color: red;
+  height: 40px;
+  width: 230px;
+}
+/* explicador */
+
+/* medias */
 @media (max-width: 1200px) {
   #padre_total{
-    height: 1200px;
+    height: 1500px;
+  }
+  #tabla{
+    position: relative;
+    left: 300px;
+
+  }
+  #copas{
+    position: relative;
+    left: 340px;
   }
 }
+@media (max-width: 991px){
+  #tabla{
+    position: relative;
+    left: 100px;
+
+  }
+  #copas{
+    position: relative;
+    left: 140px;
+  }
+}
+@media (max-width: 402px){
+  #tabla{
+    position: relative;
+    left: 20px;
+  }
+  #copas{
+    position: relative;
+    left: 10px;
+  }
+}
+
+/* medias */

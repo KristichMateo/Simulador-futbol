@@ -4,88 +4,98 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulador</title>
+    <title>Simuladores</title>
     <link rel="stylesheet" href="/templates/styles/bootstrap.css">
-    <link rel="stylesheet" href="/templates/styles/styles.css">
+    <link rel="stylesheet" href="/templates/styles/index.css">
 </head>
-<h1 id="titulo">Simulador</h1>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Simulador LPF</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarColor01">
-        <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-            <a class="nav-link active" href="#">Home
-              <span class="visually-hidden">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Herramientas usadas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Otros simuladores</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Separated link</a>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Simuladores</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav me-auto">
+                 
+                  <li class="nav-item">
+                    <a class="nav-link" href="/templates/LPF.html">LPF</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Git hub</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Inicio de sesion</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Herramientas usadas</a>
+                  </li>
+                
+                </ul>
+               
+              </div>
             </div>
-          </li>
-        </ul>
+          </nav>
+    </header>
+    <main>
+        <div id="padre_total">
+            <br><br><br>
+            <div id="padre" class="container">
+                <br><br>
+                <div class="row">
+                    <div class="col-xl-4">
+                        <div id="" class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+                            <div class="card-body">
+                            <h4 class="card-title">Bienvenido</h4>
+                            <p class="card-text">
+                                Que encontraras
+                                <ul>
+                                    <li>Simuladores de distintas ligas</li>
+                                    <li>Generaran puntos</li>
+                                    <li>Se calculan atraves de estadisticas</li>
+                                    
+                                </ul>
+                            </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-8">
+                        <div class="d-grid gap-2">
+                            <a id="LPF" class="btn btn-lg btn-primary" type="button" href="/templates/LPF.html">LPF</a>
+                            <a id="LPF" class="btn btn-lg btn-primary" type="button" href="/templates/Premier_league.html">Premier League</a>
+                            <a id="LPF" class="btn btn-lg btn-primary" type="button" href="/templates/LPF.html"> Serie A</a>
+                            <a id="LPF" class="btn btn-lg btn-primary" type="button" href="/templates/LPF.html"> Bundes Liga</a>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         
-      </div>
-    </div>
-  </nav>
-  <div id="padre_total">
-    <div id="padre" class="container">
-      
-     
-      <div class="row">
-        
-      <div class="col-xl-4">
-        <br>
-            <img src="/templates/assets/img/LPF.png" alt="">    
-      </div>
-      <div class="col-xl-4">
-      <table class="table-primary">
-        <!-- filas iniciales -->
-      <tr id="fila_inicial">
-        <th>
-          
-        </th>
-        <th>
-          
-        </th>
-      </tr>       
-      <!-- filas rellenables -->
-      </table>
-    </div>
-    <div class="col-xl-4">
-      <img src="/templates/assets/img/AFA.png" alt="">
-    </div>
-  </div>
-      <br>
-      <input id="boton" class="btn btn-primary" type="reset" value="Simular">
-      <input id="borrar" class="btn btn-primary" type="reset" value="Borrar">
-
-
+        </div>
+    </main>
     
+    <footer id="footer">
+        <div class="container">
+            <div id="div_footer" class="row">
+              <div id="facebook" class="col-xl-3 col-lg-3 md-3 sm-4">
+                <img class="img_footer" src="/templates/assets/img/facebook.png" alt="">
+              </div>
+              <div class="col-xl-3 col-lg-3 md-3 sm-4">
+                <img class="img_footer" src="/templates/assets/img/twitter.png" alt="">
+              </div>
+              <div class="col-xl-3 col-lg-3 md-3 sm-4">
+                <img class="img_footer" src="/templates/assets/img/instagram.png" alt="">
+              </div>
+              <div class="col-xl-3 col-lg-3 md-3 sm-4">
+                <img class="img_footer" src="/templates/assets/img/tik-tok.png" alt="">
+              </div>
       
+            </div>
+        </div>
+          
+    </footer>
 
-    </div>
-  </div>
-    
-        <script src="/templates/scripts/script.js"></script>
-    </body>
+</body>
 </html>

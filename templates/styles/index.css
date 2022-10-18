@@ -1,0 +1,34 @@
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+/* main */
+#padre_total{
+    background-color: #0d1b2a;
+    height: 800px;    
+  }
+#padre{
+    text-align: center;
+    background-color:#011638;
+    height: 100%;
+  }
+.btn btn-lg btn-primary>a{
+    color: white;
+}
+#LPF{
+    color: white;
+}
+/* main */
+
+/* footer */
+#div_footer>div{
+    padding:40px;
+  }
+  
+#footer{
+    background-color:#191919;
+  }
+  
+
+/* footer */
