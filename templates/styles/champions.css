@@ -1,0 +1,78 @@
+*{
+    color: white;
+  }
+  #padre{
+    text-align: center;
+    background-color:#011638;
+    height: 100%;
+  }
+  .img-main{
+    width:300px;
+    height: 300px;
+  }
+  #afa{
+    width:  250px;
+    height: 250px;
+
+}
+  #titulo{
+    text-align: center;
+  }
+  #padre_total{
+    background-color: #0d1b2a;
+    height: 900px;
+    
+  }
+  #div_footer>div{
+    padding:40px;
+  }
+  
+  #footer{
+    background-color:#191919;
+    height:100%
+  }
+  
+  
+  #tablas_competiciones{
+    position: relative;
+    top: 80%;
+  }
+
+
+  @media (max-width: 1200px) {
+    #padre_total{
+      height: 1500px;
+    }
+    #tabla{
+      position: relative;
+      left: 300px;
+  
+    }
+    #copas{
+      position: relative;
+      left: 340px;
+    }
+  }
+  @media (max-width: 991px){
+    #tabla{
+      position: relative;
+      left: 100px;
+  
+    }
+    #copas{
+      position: relative;
+      left: 140px;
+    }
+  }
+  @media (max-width: 402px){
+    #tabla{
+      position: relative;
+      left: 20px;
+    }
+    #copas{
+      position: relative;
+      left: 10px;
+    }
+  }
+  
+  /* medias */
