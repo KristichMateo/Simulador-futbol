@@ -18,7 +18,7 @@ from flask_cors import CORS
 from simulador_LPF import torneo
 from PL_simulador import torneo_PL
 from bundes import torneo_Bundes
-from champions import Octavos_json, simular_grupos,simular_octavos,simular_cuartos,simular_semis,simular_final 
+from champions import Octavos_json, simular_grupos,simular_octavos,simular_cuartos,simular_semis,simular_final,champions_simular
 
 app = Flask(__name__)      
 CORS(app)
@@ -83,6 +83,7 @@ def bundes():
     return (tabla_front)
 @app.route("/champions")        #Champion League
 def champions():
+    champions_simular
     grupos = simular_grupos()
     octavos = simular_octavos()
     cuartos = simular_cuartos()

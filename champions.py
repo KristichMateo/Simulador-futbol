@@ -16,40 +16,44 @@ class Equipo:           #Clase equipo con probabilidad de gol (pdg), nombre, pro
     def __repr__(self):
         return self.nombre 
 
-Manchester_City = Equipo(81,"Manchester City",9,5)
-Liverpool = Equipo(80,"Liverpool",9,5)
-Chelsea = Equipo(78,"Chelsea",9,5)
-Tottenham = Equipo(77,"Tottenham",10,5)
-Leicester_City = Equipo(73,"Leicester City",11,5)
-West_Ham = Equipo(72,"West Ham",11,5)
-Man_Utd = Equipo(76,"Manchester United",9,5)
-Aston_Villa = Equipo(74,"Aston Villa",10,5) 
-Crystal_palace = Equipo(72,"Crystal Palace",12,5)
-Arsenal_eng = Equipo(75,"Arsenal",9,5)
-Brentford = Equipo(67,"Brentford",11,4)
-Newcastle = Equipo(69,"Newcaste",10,4)
-Everton = Equipo(70,"Everton",11,4)
-Southampton = Equipo(65,"Southampton",12,4)
-Leeds = Equipo(67,"Leeds United",12,4)
-Brighton = Equipo(65,"Brighton",10,4)
-Wolverhampton = Equipo(70,"Wolverhampton",9,4)  
-Burnley = Equipo(65,"Burnley",13,4)
-Watford = Equipo(64,"Watford",13,4)
-Norwich_City = Equipo(63,"Norwich City",14,4)
+Manchester_City = Equipo(85,"Manchester City",9,5)
+Real_Madrid = Equipo(86,"Real Madrid",9,5)
+Chelsea = Equipo(83,"Chelsea",10,5)
+Tottenham = Equipo(82,"Tottenham",9,5)
+Milan = Equipo(83,"Milan",10,5)
+Bayern_Múnich = Equipo(86,"Bayern Múnich",9,5)
+Psg = Equipo(87,"Paris Saint Germain",10,5)
+Oporto = Equipo(80,"Oporto",11,5) 
+Ajax = Equipo(77,"Ajax",12,4)
+Eintracht_Frankfurt = Equipo(76,"Eintracht Frankfurt",13,4)
+Atletico_madrid = Equipo(84,"Atletico de Madrid",11,5)
+Barcelona  = Equipo(83,"Barcelona",11,5)
+Liverpool = Equipo(85,"Liverpool",10,5)
+Sevilla = Equipo(80,"Sevilla",13,4)
+Juventus = Equipo(81,"Juventus",11,5)
+RB_leipzig = Equipo(77,"RB Leipzig",12,4)
+Borussia_Dortmund = Equipo(79,"Borussia Dortmund",10,4)  
+RB_Salzburgo = Equipo(74,"RB Salzburgo",13,4)
+Shakhtar_Donetsk = Equipo(73,"Shakhtar Donetsk",12,4)
+Inter_milan = Equipo(82,"Inter de Milan",9,5)
 #relleno
-Crystal_palace_2 = Equipo(72,"Crystal Palace_2",12,5)
-Arsenal_eng_2 = Equipo(75,"Arsenal_2",9,5)
-Brentford_2 = Equipo(67,"Brentford_2",11,4)
-Newcastle_2 = Equipo(69,"Newcaste_2",10,4)
-Everton_2 = Equipo(70,"Everton_2",11,4)
-Southampton_2 = Equipo(65,"Southampton_2",12,4)
-Leeds_2 = Equipo(67,"Leeds United_2",12,4)
-Brighton_2 = Equipo(65,"Brighton_2",10,4)
-Wolverhampton_2 = Equipo(70,"Wolverhampton_2",9,4)  
-Burnley_2 = Equipo(65,"Burnley_2",13,4)
-Watford_2 = Equipo(64,"Watford_2",13,4)
-Norwich_City_2 = Equipo(63,"Norwich City_2",14,4)
+Nápoles = Equipo(82,"Nápoles",10,5)
+Benfica  = Equipo(80,"Benfica",10,5)
+Sporting_lisboa = Equipo(78,"Sporting Lisboa",11,4)
+Olympique_Marsella = Equipo(77,"Olympique de Marsella",11,4)
+Brujas  = Equipo(75,"Brujas",11,5)
+Celtic  = Equipo(74,"Celtic",10,4)
+Victoria_Plzen= Equipo(72,"Victoria Plzen",14,4)
+Maccabi_Haifa  = Equipo(71,"Maccabi_Haifa",15,4)
+Rangers  = Equipo(74,"Rangers",11,4)  
+FC_Copenhague = Equipo(70,"FC Copenhague",13,4)
+Dinamo_Zagreb = Equipo(72,"Dinamo Zagreb",13,4)
+Leverkusen = Equipo(76,"Leverkusen",11,4)
 #relleno
+E= [Manchester_City,Leverkusen,Chelsea,Tottenham,Real_Madrid,Milan,Bayern_Múnich, Psg,Oporto,
+Ajax,Eintracht_Frankfurt,Atletico_madrid,Barcelona,Liverpool,Sevilla,Juventus,RB_leipzig,Borussia_Dortmund,RB_Salzburgo,Shakhtar_Donetsk,
+Inter_milan,Nápoles,Benfica,Sporting_lisboa,Olympique_Marsella,Brujas,Celtic,Victoria_Plzen,Maccabi_Haifa,
+Rangers,FC_Copenhague,Dinamo_Zagreb] #Lista de equipos
 A_grupo = []        #grupos
 B_grupo = []
 C_grupo = []
@@ -73,10 +77,7 @@ Octavos_json = {}
 Cuartos_json = {}   
 Semis_json = {}  
 Final_json = {}                              
-E= [Manchester_City,Liverpool,Chelsea,Tottenham,Leicester_City,West_Ham,Man_Utd, Aston_Villa,Crystal_palace,
-Brentford,Newcastle,Everton,Southampton,Leeds,Brighton,Wolverhampton,Burnley,Watford,Norwich_City,Arsenal_eng,
-Crystal_palace_2,Arsenal_eng_2,Brentford_2,Newcastle_2,Everton_2,Southampton_2,Leeds_2,Brighton_2,Wolverhampton_2,
-Burnley_2,Watford_2,Norwich_City_2] #Lista de equipos
+
 equipo_aleatorio = 0
 for i in range(8):
     grupo_actual = grupos[i]
@@ -216,16 +217,24 @@ def simular_grupos():
         lista_fase_grupos.append(grupo_ordenado)
         print("grupo ordenado:",grupo_ordenado)
         lista_Octavos.append(grupo_ordenado[0])          
-        lista_Octavos.append(grupo_ordenado[1])   
+        lista_Octavos.append(grupo_ordenado[1]) 
+        A = sorted(grupos[0], key=lambda t: t.puntos , reverse=True)
+        B = sorted(grupos[1], key=lambda t: t.puntos , reverse=True)
+        C = sorted(grupos[2], key=lambda t: t.puntos , reverse=True)
+        D = sorted(grupos[3], key=lambda t: t.puntos , reverse=True)
+        E2 = sorted(grupos[4], key=lambda t: t.puntos , reverse=True)
+        F = sorted(grupos[5], key=lambda t: t.puntos , reverse=True)
+        G = sorted(grupos[6], key=lambda t: t.puntos , reverse=True)
+        H = sorted(grupos[7], key=lambda t: t.puntos , reverse=True)
     Grupos_json = {
-        "A":str(sorted(grupos[0], key=lambda t: t.puntos , reverse=True)),
-        "B":str(sorted(grupos[0], key=lambda t: t.puntos , reverse=True)),
-        "C":str(sorted(grupos[0], key=lambda t: t.puntos , reverse=True)),
-        "D":str(sorted(grupos[0], key=lambda t: t.puntos , reverse=True)),
-        "E":str(sorted(grupos[0], key=lambda t: t.puntos , reverse=True)),
-        "F":str(sorted(grupos[0], key=lambda t: t.puntos , reverse=True)),
-        "G":str(sorted(grupos[0], key=lambda t: t.puntos , reverse=True)),
-        "H":str(sorted(grupos[0], key=lambda t: t.puntos , reverse=True))}   
+        "A":[A[0].nombre,A[0].puntos,A[1].nombre,A[1].puntos,A[2].nombre,A[2].puntos,A[3].nombre,A[3].puntos,],
+        "B":[B[0].nombre,B[0].puntos,B[1].nombre,B[1].puntos,B[2].nombre,B[2].puntos,B[3].nombre,B[3].puntos,],
+        "C":[C[0].nombre,C[0].puntos,C[1].nombre,C[1].puntos,C[2].nombre,C[2].puntos,C[3].nombre,C[3].puntos,],
+        "D":[D[0].nombre,D[0].puntos,D[1].nombre,D[1].puntos,D[2].nombre,D[2].puntos,D[3].nombre,D[3].puntos,],
+        "E":[E2[0].nombre,E2[0].puntos,E2[1].nombre,E2[1].puntos,E2[2].nombre,E2[2].puntos,E2[3].nombre,E2[3].puntos,],
+        "F":[F[0].nombre,F[0].puntos,F[1].nombre,F[1].puntos,F[2].nombre,F[2].puntos,F[3].nombre,F[3].puntos,],
+        "G":[G[0].nombre,G[0].puntos,G[1].nombre,G[1].puntos,G[2].nombre,G[2].puntos,G[3].nombre,G[3].puntos,],
+        "H":[H[0].nombre,H[0].puntos,H[1].nombre,H[1].puntos,H[2].nombre,H[2].puntos,H[3].nombre,H[3].puntos,]}
       #Ordenar primeros y segundos
         
     for i in range(16):                 #Identificar primeros y segundos
@@ -609,6 +618,12 @@ octavos_front = simular_octavos()
 Cuartos_front = simular_cuartos()
 Semis_front = simular_semis()
 Final_front = simular_final()
+def champions_simular():
+    simular_grupos()
+    simular_octavos()
+    simular_cuartos()
+    simular_semis()
+    simular_final()
 print("Grupos simulados",grupos_front)
 print("Octavos simulados",octavos_front)
 print("Cuartos simulados",Cuartos_front)
