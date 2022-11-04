@@ -253,38 +253,51 @@ def simular():
     retorno.update({"grupos":Grupos_json})      
     cruces = []
     print("Octavos")
-    for i in range(8):                  #Simular Octavos
-            try:
-                numero1 = random.randrange(0,8-i)           #sorteo de cruces
-                equipo_1 = lista_Primeros.pop(numero1)
-                numero2 = random.randrange(0,8-i)
-                equipo_2 = lista_Segundos.pop(numero2)      #sorteo de cruces
-                for k in range(2):                                                      #Simulacion IDA y VUELTA
-                    if k == 0:
-                        print("IDA")
-                        l_I = 0
-                        v_I = 0
-                        l_I = gol_local(equipo_1.pdg, equipo_2.pdd, equipo_1.pdc )
-                        v_I = gol_visita(equipo_2.pdg, equipo_1.pdd, equipo_2.pdc)
-                        equipo_1.goles += l_I
-                        equipo_2.goles += v_I
-                        print(equipo_1.nombre,l_I,":",v_I,equipo_2.nombre)
-                    elif k == 1:
-                        print("VUELTA")
-                        l_V = 0
-                        v_V = 0
-                        l_V = gol_local(equipo_2.pdg, equipo_1.pdd, equipo_2.pdc )
-                        v_V = gol_visita(equipo_1.pdg, equipo_2.pdd, equipo_1.pdc)
-                        equipo_2.goles += l_V
-                        equipo_1.goles += v_V
-                        print(equipo_2.nombre,l_V,":",v_V,equipo_1.nombre)
-                        goles_primero = l_I + v_V
-                        goles_segundo = v_I + l_V      
-                        if goles_primero > goles_segundo:
-                            lista_Cuartos.append(equipo_1)
-                        elif goles_segundo > goles_primero:
-                            lista_Cuartos.append(equipo_2)
-                        else:                                             #Simulacion penales (en caso de empate)
+    p = 8
+    for i in range(8):
+        print("iiiii",i)                  #Simular Octavos
+        try:
+                
+                                              #sorteo de cruces
+                if i ==0:
+                    equipo_1 = A[0]
+                    equipo_2 = B[1]   
+                elif i == 1:
+                    equipo_1 = A[1]
+                    equipo_2 = B[0]
+                elif i == 2:
+                    equipo_1 = C[0]
+                    equipo_2 = D[1]       
+                elif i == 3:
+                    equipo_1 = C[1]
+                    equipo_2 = D[0]     
+                elif i == 4:
+                    equipo_1 = E2[0]
+                    equipo_2 = F[1]       
+                elif i == 5:
+                    equipo_1 = E2[1]
+                    equipo_2 = F[0]
+                elif i == 6:
+                    equipo_1 = G[0]
+                    equipo_2 = H[1]     
+                elif i == 7:
+                    equipo_1 = G[1]
+                    equipo_2 = H[0]            #sorteo de cruces
+                p = p-1
+                l_V = 0
+                v_V = 0
+                l_V = gol_local(equipo_2.pdg, equipo_1.pdd, equipo_2.pdc )
+                v_V = gol_visita(equipo_1.pdg, equipo_2.pdd, equipo_1.pdc)
+                equipo_2.goles += l_V
+                equipo_1.goles += v_V
+                print(equipo_2.nombre,l_V,":",v_V,equipo_1.nombre)
+                goles_primero = v_V
+                goles_segundo = l_V      
+                if goles_primero > goles_segundo:
+                        lista_Cuartos.append(equipo_1)
+                elif goles_segundo > goles_primero:
+                        lista_Cuartos.append(equipo_2)
+                else:                                             #Simulacion penales (en caso de empate)
                             "EMPATARON"     
                             anotados_primero = 0
                             anotados_segundo = 0
@@ -327,15 +340,15 @@ def simular():
                                 elif anotados_primero < anotados_segundo:
                                     lista_Cuartos.append(equipo_2)
                                     print("clasifico por penales", equipo_2)
-                        if goles_primero != goles_segundo:
+                if goles_primero != goles_segundo:
                             a = equipo_1.nombre,goles_primero ,":", goles_segundo,equipo_2.nombre
-                        else:
+                else:
                             a = equipo_1.nombre,goles_primero ,":", goles_segundo,equipo_2.nombre,anotados_primero,anotados_segundo
-                        cruces.append(a)
-                        print(cruces)
-                        print(len(cruces))
+                cruces.append(a)
+                print(cruces)
+                print(len(cruces))
                 
-            except IndentationError:
+        except IndentationError:
                 print("error 1") 
     Octavos_json ={
                             "cruce1":cruces[0],
@@ -358,36 +371,26 @@ def simular():
     for i in range(4):                  #Simular Cuartos
             try:
                 print("lista semis",lista_Semis)
-                numero1 = random.randrange(0,4-i)           #sorteo de cruces
-                equipo_1 = lista_Cuartos.pop(numero1)
-                numero2 = random.randrange(0,4-i)
-                equipo_2 = lista_Cuartos.pop(numero2)      #sorteo de cruces
-                for k in range(2):                                                      #Simulacion IDA y VUELTA
-                        if k == 0:
-                            print("IDA")
-                            l_I = 0
-                            v_I = 0
-                            l_I = gol_local(equipo_1.pdg, equipo_2.pdd, equipo_1.pdc )
-                            v_I = gol_visita(equipo_2.pdg, equipo_1.pdd, equipo_2.pdc)
-                            equipo_1.goles += l_I
-                            equipo_2.goles += v_I
-                            print(equipo_1.nombre,l_I,":",v_I,equipo_2.nombre)
-                        elif k == 1:
-                            print("VUELTA")
-                            l_V = 0
-                            v_V = 0
-                            l_V = gol_local(equipo_2.pdg, equipo_1.pdd, equipo_2.pdc )
-                            v_V = gol_visita(equipo_1.pdg, equipo_2.pdd, equipo_1.pdc)
-                            equipo_2.goles += l_V
-                            equipo_1.goles += v_V
-                            print(equipo_2.nombre,l_V,":",v_V,equipo_1.nombre)
-                            goles_primero = l_I + v_V
-                            goles_segundo = v_I + l_V      
-                            if goles_primero > goles_segundo:
+                      #sorteo de cruces
+                equipo_1=lista_Cuartos[i]
+                equipo_2=lista_Cuartos[i+1]
+
+                    #sorteo de cruces
+              
+                l_V = 0
+                v_V = 0
+                l_V = gol_local(equipo_2.pdg, equipo_1.pdd, equipo_2.pdc )
+                v_V = gol_visita(equipo_1.pdg, equipo_2.pdd, equipo_1.pdc)
+                equipo_2.goles += l_V
+                equipo_1.goles += v_V
+                print(equipo_2.nombre,l_V,":",v_V,equipo_1.nombre)
+                equipo_2.goles += l_V
+                equipo_1.goles += v_V 
+                if goles_primero > goles_segundo:
                                 lista_Semis.append(equipo_1)
-                            elif goles_segundo > goles_primero:
+                elif goles_segundo > goles_primero:
                                 lista_Semis.append(equipo_2)
-                            else:                                             #Simulacion penales (en caso de empate)
+                else:                                             #Simulacion penales (en caso de empate)
                                 "EMPATARON"     
                                 anotados_primero = 0
                                 anotados_segundo = 0
@@ -430,12 +433,12 @@ def simular():
                                     elif anotados_primero < anotados_segundo:
                                         lista_Semis.append(equipo_2)
                                         print("clasifico por penales", equipo_2)    #En caso de que emapten los 5 primeros penales
-                            if goles_primero != goles_segundo:
+                if goles_primero != goles_segundo:
                                 a = equipo_1.nombre,goles_primero ,":", goles_segundo,equipo_2.nombre
-                            else:
+                else:
                                 a = equipo_1.nombre,goles_primero ,":", goles_segundo,equipo_2.nombre,anotados_primero,anotados_segundo
-                            cruces.append(a)
-                            print(cruces)
+                cruces.append(a)
+                print(cruces)
                         
             except IndentationError:
                     print("error")                       
@@ -460,32 +463,20 @@ def simular():
                 equipo_1 = lista_Semis[i]
                 equipo_2 = lista_Semis[i+2]
                 #sorteo de cruces
-                for k in range(2):                                                      #Simulacion IDA y VUELTA
-                        if k == 0:
-                            print("IDA")
-                            l_I = 0
-                            v_I = 0
-                            l_I = gol_local(equipo_1.pdg, equipo_2.pdd, equipo_1.pdc )
-                            v_I = gol_visita(equipo_2.pdg, equipo_1.pdd, equipo_2.pdc)
-                            equipo_1.goles += l_I
-                            equipo_2.goles += v_I
-                            print(equipo_1.nombre,l_I,":",v_I,equipo_2.nombre)
-                        elif k == 1:
-                            print("VUELTA")
-                            l_V = 0
-                            v_V = 0
-                            l_V = gol_local(equipo_2.pdg, equipo_1.pdd, equipo_2.pdc )
-                            v_V = gol_visita(equipo_1.pdg, equipo_2.pdd, equipo_1.pdc)
-                            equipo_2.goles += l_V
-                            equipo_1.goles += v_V
-                            print(equipo_2.nombre,l_V,":",v_V,equipo_1.nombre)
-                            goles_primero = l_I + v_V
-                            goles_segundo = v_I + l_V      
-                            if goles_primero > goles_segundo:
+                l_V = 0
+                v_V = 0
+                l_V = gol_local(equipo_2.pdg, equipo_1.pdd, equipo_2.pdc )
+                v_V = gol_visita(equipo_1.pdg, equipo_2.pdd, equipo_1.pdc)
+                equipo_2.goles += l_V
+                equipo_1.goles += v_V
+                print(equipo_2.nombre,l_V,":",v_V,equipo_1.nombre)
+                equipo_2.goles += l_V
+                equipo_1.goles += v_V    
+                if goles_primero > goles_segundo:
                                 lista_final.append(equipo_1)
-                            elif goles_segundo > goles_primero:
+                elif goles_segundo > goles_primero:
                                 lista_final.append(equipo_2)
-                            else:                                             #Simulacion penales (en caso de empate)
+                else:                                             #Simulacion penales (en caso de empate)
                                 "EMPATARON"     
                                 anotados_primero = 0
                                 anotados_segundo = 0
@@ -528,11 +519,11 @@ def simular():
                                     elif anotados_primero < anotados_segundo:
                                         lista_final.append(equipo_2)
                                         print("clasifico por penales", equipo_2)    #En caso de que emapten los 5 primeros penales
-                            if goles_primero != goles_segundo:
+                if goles_primero != goles_segundo:
                                 a = equipo_1.nombre,goles_primero ,":", goles_segundo,equipo_2.nombre
-                            else:
+                else:
                                 a = equipo_1.nombre,goles_primero ,":", goles_segundo,equipo_2.nombre,anotados_primero,anotados_segundo
-                            cruces.append(a)
+                cruces.append(a)
                             
             except IndentationError:
                     print("error")                       

@@ -348,7 +348,7 @@ def simular():
                             "cruce8":cruces[7],
                         }
     print("lista cuartos",Octavos_json)
-    retorno.update({"octavos":Octavos_json})      
+    retorno.update({"octavos":Grupos_json})      
 
     # return(Octavos_json)
     cruces = []

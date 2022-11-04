@@ -90,7 +90,10 @@
   width: 230px;
 }
 /* explicador */
-
+.img_bot{
+  max-width: 30px;
+  max-height: 30px; ;
+}
 /* medias */
 @media (max-width: 1200px) {
   #padre_total{

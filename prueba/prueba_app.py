@@ -16,7 +16,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy import *
 from flask_cors import CORS
 
-from champions import simular
+from prueba import simular
 
 app = Flask(__name__)      
 CORS(app)

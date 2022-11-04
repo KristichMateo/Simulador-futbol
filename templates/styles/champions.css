@@ -49,6 +49,10 @@
     position: relative;
     top: 80%;
   }
+  .img_bot{
+    max-width: 30px;
+    max-height: 30px; ;
+  }
 h2{
   color: white !important;
 }

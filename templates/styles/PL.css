@@ -74,6 +74,10 @@
     height: 80px;
     width: 230px;
   }
+  .img_bot{
+    max-width: 30px;
+    max-height: 30px; ;
+  }
   .Sudamericana_color{
     background-color: yellowgreen;
     height: 80px;
