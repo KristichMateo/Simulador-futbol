@@ -1,0 +1,135 @@
+*{
+    color: white;
+  }
+#padre{
+    text-align: center;
+    background-color:#011638;
+    height: 100%; 
+  }
+.img-main{
+    width:300px;
+    height: 300px;
+  }
+#afa{
+    width:  250px;
+    height: 250px;
+
+}
+#titulo{
+    text-align: center;
+  }
+#padre_cambio{
+  height: 2000px !important;
+  background-color: #0d1b2a;
+
+}
+#padre_total{
+    background-color: #0d1b2a;
+    height: 1400px ;
+    
+  }
+#div_footer>div{
+    padding:40px;
+  }
+  
+#footer{
+    background-color:#191919;
+    height:100%
+  }
+ #grupos{
+  color: white;
+ } 
+  table,tr {
+    border: 1px solid white;
+  }
+  table,th {
+    border: 1px solid white;
+  }
+  #tablas_competiciones{
+    position: relative;
+    top: 80%;
+  }
+  .img_bot{
+    max-width: 30px;
+    max-height: 30px; ;
+  }
+h2{
+  color: white !important;
+}
+.clasificados{
+  background-color: green;
+}
+.eliminado{
+  background-color: red;
+}
+.europa{
+  background-color: red;
+}
+#tabla_div{
+  background-color: rgb(56, 38, 255);
+}
+#tabla_octavos,#tabla_Cuartos,#tabla_semis,#tabla_final{
+text-align: center;
+  width: 100%;
+}
+
+.campeon_champion{
+  background-color: gold;
+  color: black;
+}
+.tabla_grupo{
+  width: 200px;
+}
+@media (max-width: 768px) {
+  .tabla_grupo{
+    position: relative;
+    left: 160px;
+  }
+  #padre_cambio{
+    height: 3000px !important;
+    background-color: #0d1b2a;
+  
+  }
+  }
+@media (max-width: 1200px) {
+    #padre_total{
+      height: 1500px;
+    }
+
+    #tabla{
+      position: relative;
+      left: 300px;
+  
+    }
+    #copas{
+      position: relative;
+      left: 340px;
+    }
+  }
+  @media (max-width: 991px){
+    #tabla{
+      position: relative;
+      left: 100px;
+  
+    }
+    #copas{
+      position: relative;
+      left: 140px;
+    }
+  }
+  @media (max-width: 402px){
+    #tabla{
+      position: relative;
+      left: 20px;
+    }
+    #copas{
+      position: relative;
+      left: 10px;
+    }
+    .tabla_grupo{
+      position: relative;
+      left: 80px;
+    }
+  }
+  
+  /* medias */

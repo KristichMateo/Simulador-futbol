@@ -4,7 +4,7 @@ from re import A
 import tkinter as tk
 from tkinter import *
 
-def simular():
+def simular_qatar():
     def gol_local (pdg,pdd,pdc):
                 global golL
                 golL = 0
@@ -38,39 +38,39 @@ def simular():
         def __repr__(self):
             return self.nombre 
 
-    Manchester_City = Equipo(85,"Manchester City",9,5)
-    Real_Madrid = Equipo(86,"Real Madrid",9,5)
-    Chelsea = Equipo(83,"Chelsea",10,5)
-    Tottenham = Equipo(82,"Tottenham",9,5)
-    Milan = Equipo(83,"Milan",10,5)
-    Bayern_Múnich = Equipo(86,"Bayern Múnich",9,5)
-    Psg = Equipo(87,"Paris Saint Germain",10,5)
-    Oporto = Equipo(80,"Oporto",11,5) 
-    Ajax = Equipo(77,"Ajax",12,4)
-    Eintracht_Frankfurt = Equipo(76,"Eintracht Frankfurt",13,4)
-    Atletico_madrid = Equipo(84,"Atletico de Madrid",11,5)
-    Barcelona  = Equipo(83,"Barcelona",11,5)
-    Liverpool = Equipo(85,"Liverpool",10,5)
-    Sevilla = Equipo(80,"Sevilla",13,4)
-    Juventus = Equipo(81,"Juventus",11,5)
-    RB_leipzig = Equipo(77,"RB Leipzig",12,4)
-    Borussia_Dortmund = Equipo(79,"Borussia Dortmund",10,4)  
-    RB_Salzburgo = Equipo(74,"RB Salzburgo",13,4)
-    Shakhtar_Donetsk = Equipo(73,"Shakhtar Donetsk",12,4)
-    Inter_milan = Equipo(82,"Inter de Milan",9,5)
+    Manchester_City = Equipo(63,"Qatar",19,4)
+    Real_Madrid = Equipo(90,"Belgica",9,5)
+    Chelsea = Equipo(90,"Brasil",10,5)
+    Tottenham = Equipo(89,"Francia",10,5)
+    Milan = Equipo(89,"Argentina",9,5)
+    Bayern_Múnich = Equipo(87,"Inglaterra",11,5)
+    Psg = Equipo(86,"España",12,5)
+    Oporto = Equipo(87,"Portugal",12,5) 
+    Ajax = Equipo(80,"Dinamarca",12,4)
+    Eintracht_Frankfurt = Equipo(86,"Paises Bajos",11,5)
+    Atletico_madrid = Equipo(87,"Alemania",10,5)
+    Barcelona  = Equipo(79,"Suiza",13,4)
+    Liverpool = Equipo(80,"Croacia",12,5)
+    Sevilla = Equipo(81,"Uruguay",13,5)
+    Juventus = Equipo(78,"Mexico",14,5)
+    RB_leipzig = Equipo(76,"Estados Unidos",15,4)
+    Borussia_Dortmund = Equipo(76,"Iran",13,4)  
+    RB_Salzburgo = Equipo(73,"Japon",14,4)
+    Shakhtar_Donetsk = Equipo(75,"Serbia",13,4)
+    Inter_milan = Equipo(74,"Corea del sur",15,5)
     #relleno
-    Nápoles = Equipo(82,"Nápoles",10,5)
-    Benfica  = Equipo(80,"Benfica",10,5)
-    Sporting_lisboa = Equipo(78,"Sporting Lisboa",11,4)
-    Olympique_Marsella = Equipo(77,"Olympique de Marsella",11,4)
-    Brujas  = Equipo(75,"Brujas",11,5)
-    Celtic  = Equipo(74,"Celtic",10,4)
-    Victoria_Plzen= Equipo(72,"Victoria Plzen",14,4)
-    Maccabi_Haifa  = Equipo(71,"Maccabi_Haifa",15,4)
-    Rangers  = Equipo(74,"Rangers",11,4)  
-    FC_Copenhague = Equipo(70,"FC Copenhague",13,4)
-    Dinamo_Zagreb = Equipo(72,"Dinamo Zagreb",13,4)
-    Leverkusen = Equipo(76,"Leverkusen",11,4)
+    Nápoles = Equipo(73,"Canada",14,5)
+    Benfica  = Equipo(77,"Polonia",13,5)
+    Sporting_lisboa = Equipo(72,"Marruecos",13,4)
+    Olympique_Marsella = Equipo(74,"Senegal",15,4)
+    Brujas  = Equipo(71,"Arabia Saudita",16,5)
+    Celtic  = Equipo(72,"Ecuador",14,4)
+    Victoria_Plzen= Equipo(69,"Ghana",17,4)
+    Maccabi_Haifa  = Equipo(68,"Tunez",18,4)
+    Rangers  = Equipo(68,"Camerun",18,4)  
+    FC_Copenhague = Equipo(68,"Australia",17,4)
+    Dinamo_Zagreb = Equipo(73,"Gales",14,4)
+    Leverkusen = Equipo(69,"Costa Rica",16,4)
     #relleno
     E= [Manchester_City,Leverkusen,Chelsea,Tottenham,Real_Madrid,Milan,Bayern_Múnich, Psg,Oporto,
     Ajax,Eintracht_Frankfurt,Atletico_madrid,Barcelona,Liverpool,Sevilla,Juventus,RB_leipzig,Borussia_Dortmund,RB_Salzburgo,Shakhtar_Donetsk,
@@ -611,5 +611,5 @@ def simular():
     retorno.update({"final":Final_json})      
 
     return retorno
-a  = simular()
+a  = simular_qatar()
 print(a)

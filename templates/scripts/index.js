@@ -25,6 +25,9 @@ estadisticas.addEventListener("click",()=>{
     <li> LPF:2021 </li>
     <li> Premier League:2021/2022 </li>
     <li> Bundes Liga:2022 (temporada actual)</li>
+    <li> Champions League:2022 (temporada actual)</li>
+    <li> Mundial:2022 (temporada actual)</li>
+
 
 </ul>`
 })

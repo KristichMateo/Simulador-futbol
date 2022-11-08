@@ -20,7 +20,7 @@ let padre_div = document.getElementById("padre_total")
 boton.addEventListener("click",async function devolver_tabla() {
   
   padre_div.setAttribute("id","padre_cambio")
-  const respuesta = await fetch(`${API}/champions`,{
+  const respuesta = await fetch(`${API}/mundial`,{
       method:["GET"],
     },)
   let data = await respuesta.json();
