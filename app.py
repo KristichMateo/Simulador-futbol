@@ -1,10 +1,7 @@
 from asyncio.windows_events import NULL
 import json
-from operator import mod
 from flask import Flask, render_template, request, jsonify
-from flask_mysqldb import MySQL
-from email.policy import default
-from enum import unique
+
 import flask
 
 from flask_cors import CORS
